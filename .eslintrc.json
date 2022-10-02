@@ -1,0 +1,45 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "max-len": [
+      "warn",
+      {
+        "code": 130,
+        "ignoreUrls": true
+      }
+    ],
+    "no-unreachable": "error",
+    "@typescript-eslint/no-namespace": "off",
+    "no-console": [ "warn", {"allow": ["warn", "info", "error"]} ],
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "hrefLeft", "hrefRight" ],
+      "aspects": [ "invalidHref", "preferButton" ]
+    }],
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "TSEnumDeclaration",
+        "message": "Don't declare enums"
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "verstion": "detect"
+    }
+  }
+}
